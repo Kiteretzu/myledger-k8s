@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app
+  name: myledger
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/your-org/k8s-manifests.git'
+    repoURL: 'https://github.com/Kiteretzu/myledger-k8s'
     targetRevision: main
     path: .    # path inside repo where manifests are stored
   destination:
