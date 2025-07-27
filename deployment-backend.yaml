@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-service
+  name: ledger-backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: order-service
+      app: ledger-backend
   template:
     metadata:
       labels:
-        app: order-service
+        app: ledger-backend
     spec:
       containers:
-        - name: order-service
-          image: your-dockerhub/order-service:latest
+        - name: ledger-backend
+          image: sm7rth/my-ledger-backend:latest
           ports:
             - containerPort: 3002
           envFrom:
