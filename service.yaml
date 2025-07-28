@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: ledger-backend-service
 spec:
   selector:
-    app: my-app
+    app: ledger-backend
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 2231
   type: ClusterIP
