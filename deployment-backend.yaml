@@ -16,7 +16,7 @@ spec:
         - name: ledger-backend
           image: sm7rth/my-ledger-backend:4b48b5ff94f2b22d04bc35a01dd5b67c25ff5a6a
           ports:
-            - containerPort: 3002
+            - containerPort: 2231
           envFrom:
             - secretRef:
                 name: ledger-backend-secret   # references decrypted secret
