@@ -19,5 +19,5 @@ spec:
             - containerPort: 2231
           envFrom:
             - secretRef:
-                name: ledger-backend-secret   # references decrypted secret
+                name: ledger-backend-secret # references decrypted secret
 
