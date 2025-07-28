@@ -4,12 +4,12 @@ metadata:
   name: microservices-ingress
 spec:
   rules:
-    http:
-      paths:
-        - path: /backend
-          pathType: Prefix
-          backend:
-            service:
-              name: ledger-backend-service
-              port:
-                number: 80
+    - http:
+        paths:
+          - path: /backend
+            pathType: Prefix
+            backend:
+              service:
+                name: ledger-backend-service
+                port:
+                  number: 80
