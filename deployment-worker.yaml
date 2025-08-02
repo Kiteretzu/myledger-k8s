@@ -20,3 +20,6 @@ spec:
           envFrom:
             - secretRef:
                 name: ledger-worker-secret # references decrypted secret
+          env:
+            - name: NODE_ENV
+              value: "production"
