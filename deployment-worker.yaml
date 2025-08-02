@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ledger-worker
-          image: sm7rth/my-ledger-worker:ed8c987cd393afc7447968378c96798e5931c797
+          image: sm7rth/my-ledger-worker:5baff160d9d2e8485cab63b0948c43706e926f96
           ports:
             - containerPort: 3002
           envFrom:
