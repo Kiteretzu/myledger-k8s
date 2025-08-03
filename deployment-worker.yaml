@@ -17,9 +17,6 @@ spec:
           image: sm7rth/my-ledger-worker:607020991c6fbe1b471c4970cc968ab9e49ea782
           ports:
             - containerPort: 3002
-          envFrom:
-            - secretRef:
-                name: ledger-worker-secret # references decrypted secret
           env:
             - name: NODE_ENV
               value: "production"
