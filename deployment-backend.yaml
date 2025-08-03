@@ -23,3 +23,5 @@ spec:
           env:
             - name: NODE_ENV
               value: "production"
+            - name: REDIS_URL
+              value: "redis://ledger-redis:6379" # Use the service name for Redis
