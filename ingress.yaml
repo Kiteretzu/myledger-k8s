@@ -7,7 +7,7 @@ spec:
     - host: myledger-app.ddnsfree.com
       http:
         paths:
-          - path: /backend
+          - path: /api/v1
             pathType: Prefix
             backend:
               service:
