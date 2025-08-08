@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ledger-backend
-          image: sm7rth/my-ledger-backend:54b2c657943e51b8afef758361ade11f43442c9c
+          image: sm7rth/my-ledger-backend:26b1c84a7bbc2f3c51b691561cf3f8ec237d4f7b
           ports:
             - containerPort: 2231
           envFrom:
