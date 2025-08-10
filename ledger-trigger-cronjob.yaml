@@ -9,11 +9,39 @@ spec:
       template:
         spec:
           containers:
-          - name: curl
+          - name: curl-worker1
             image: curlimages/curl:latest
             command:
               - curl
               - -X
               - POST
               - "http://ledger-backend-service.default.svc.cluster.local/api/v1/worker1"
+          - name: curl-worker2
+            image: curlimages/curl:latest
+            command:
+              - curl
+              - -X
+              - POST
+              - "http://ledger-backend-service.default.svc.cluster.local/api/v1/worker2"
+          restartPolicy: Never
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: trigger-ledger-worker3
+spec:
+  schedule: "0 4 * * *"   # Every day at 4 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: curl-worker3
+            image: curlimages/curl:latest
+            command:
+              - curl
+              - -X
+              - POST
+              - "http://ledger-backend-service.default.svc.cluster.local/api/v1/worker3"
           restartPolicy: Never

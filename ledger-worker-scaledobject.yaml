@@ -5,12 +5,12 @@ metadata:
 spec:
   scaleTargetRef:
     name: ledger-worker
-  minReplicaCount: 1
+  minReplicaCount: 2
   maxReplicaCount: 5
   triggers:
   - type: cron
     metadata:
       timezone: Asia/Kolkata
-      start: "0 0 * * *"    # 12 AM scale up
-      end: "0 2 * * *"      # 2 AM scale down
+      start: "0 4 * * *"    # 12 AM scale up
+      end: "0 6 * * *"      # 2 AM scale down
       desiredReplicas: "5"
