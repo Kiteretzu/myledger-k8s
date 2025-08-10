@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: trigger-ledger
+spec:
+  schedule: "0 0 * * *"   # Every day at 12 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: curl
+            image: curlimages/curl:latest
+            command:
+              - curl
+              - -X
+              - POST
+              - "http://ledger-backend-service.default.svc.cluster.local/api/v1/worker1"
+          restartPolicy: Never
