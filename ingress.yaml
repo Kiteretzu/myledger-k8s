@@ -23,8 +23,8 @@ spec:
                 name: cm-acme-http-solver
                 port:
                   number: 8089
-          - path: /api/v1/
-            pathType: Prefix
+          - path: /api/v1/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: ledger-backend-service
