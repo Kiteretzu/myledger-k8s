@@ -6,13 +6,18 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  tls:
+    - hosts:
+        - myledger-app.ddnsfree.com
+      secretName: myledger-app-tls
   rules:
     - host: myledger-app.ddnsfree.com
       http:
         paths:
-          - path: /api/v1/(.*)
-            pathType: ImplementationSpecific
+          - path: /api/v1/
+            pathType: Prefix
             backend:
               service:
                 name: ledger-backend-service
