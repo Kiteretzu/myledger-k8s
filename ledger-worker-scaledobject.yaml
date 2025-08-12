@@ -6,7 +6,7 @@ spec:
   scaleTargetRef:
     name: ledger-worker
   minReplicaCount: 2
-  maxReplicaCount: 5
+  maxReplicaCount: 3
   triggers:
   - type: cron
     metadata:
