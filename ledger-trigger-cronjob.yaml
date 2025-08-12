@@ -31,7 +31,7 @@ kind: CronJob
 metadata:
   name: trigger-ledger-worker3
 spec:
-  schedule: "5 9 * * *"   # Every day at 4 AM
+  schedule: "12 5 * * *"   # Every day at 5:12 AM
   jobTemplate:
     spec:
       template:
